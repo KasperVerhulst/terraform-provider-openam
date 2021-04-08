@@ -1,11 +1,11 @@
 package provider
 
 import (
-	"github.com/hashicorp/terraform-plugin-sdk/tree/main/helper/schema"
-	"github.com/hashicorp/terraform/terraform"
+	"github.com/KasperVerhulst/terraform-provider-openam/resources"
+	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 )
 
-func Provider() terraform.ResourceProvider {
+func Provider() *schema.Provider {
 	return &schema.Provider{
 		Schema: map[string]*schema.Schema{
 			"host": &schema.Schema{
@@ -23,8 +23,7 @@ func Provider() terraform.ResourceProvider {
 			},
 		},
 		ResourcesMap: map[string]*schema.Resource{
-			"openam_realm": resourceOpenamRealm(),
+			"openam_realm": resources.ResourceRealm(),
 		},
 	}
 }
-

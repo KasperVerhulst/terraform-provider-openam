@@ -1,15 +1,15 @@
 package main
 
 import (
-  "github.com/hashicorp/terraform-plugin-sdk/tree/main/helper/schema"
-  "github.com/hashicorp/terraform-plugin-sdk/tree/main/plugin"
-  "terraform-provider-openam/provider"
+	"github.com/KasperVerhulst/terraform-provider-openam/provider"
+	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
+	"github.com/hashicorp/terraform-plugin-sdk/v2/plugin"
 )
 
 func main() {
-  plugin.Serve(&plugin.ServeOpts{
-    ProviderFunc: func() *schema.Provider {
-      return provider.Provider()
-    },
-  })
+	plugin.Serve(&plugin.ServeOpts{
+		ProviderFunc: func() *schema.Provider {
+			return provider.Provider()
+		},
+	})
 }
